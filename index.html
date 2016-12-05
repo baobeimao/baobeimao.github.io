@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div{
+				width: 50px;
+				height: 50px;
+				background: red;
+				position: absolute;
+				left: 0px;
+				top:0px; 
+				transition: .5s;
+			}
+		</style>
+<script>
+	/*
+		布局转换
+	*/
+	window.onload = function(){
+		var allDiv = document.getElementsByTagName("div");
+
+		for( var i = 0; i < allDiv.length; i++ ){
+			allDiv[i].style.left = (i*60)+ "px";
+		}
+
+		var n = 0, 
+			len = allDiv.length,
+			onOff = false;
+			var target = 0;
+		document.onclick = function (){
+			//设置的开关的目的是，在狂点的时候，不能够多开定时器
+			if( onOff ) return;
+			for( var i = 0; i < allDiv.length; i++ ){
+				setTimeout(function (n){
+					allDiv[n].style.top = target + "px";	
+				},i*100,i);
+			}
+
+			onOff = true;
+		}
+		/*
+			只要有一个属性运动目标点了，就会触发这个事件
+		*/
+		allDiv[len-1].addEventListener("transitionend",function (){
+			//alert("left")
+			onOff = false;
+			if ( target === 300 ) {
+				target = 0;
+			}else{
+				target = 300;
+			}
+		},false);
+
+		/*
+			setTimeout(延迟执行的函数,延迟时间,[实参,实参,,,,,.....])
+
+			从第三个参数开始，是给延迟执行的函数传入的实际的值
+
+			只能在高版本使用
+		*/
+
+		/*setTimeout(function (a,b,c,d){
+			console.log( a,b,c,d );
+		},100,1,2,3,4);*/
+
+
+
+	};
+
+
+</script>
+	</head>
+
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>
