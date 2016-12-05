@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="./css/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    	<div id="box">
+    		<div class="list">
+    			<!-- 
+    			<p class="zhuai">
+    				<img src="css/img/zhuai.png" alt="拽拽" />
+    				<span>你好</span>
+    			</p>
+    			<p class="xiaohei">
+    				<img src="css/img/zhuai.png" alt="拽拽" />
+    				<span>你好</span>
+    			</p> -->
+    		</div>
+    		<div class="inputBox">
+    			<img src="css/img/zhuai.png" alt="拽拽" id="avatar"/>
+    			<input type="text" id="mes"/>
+    			<input type="button" id="btn" value="发送" data-toggle="tooltip" data-placement="top" title="请输入内容"/>
+    		</div>
+    	</div>
+
+    	<script>
+			$(function () { $("[data-toggle='tooltip']").tooltip(); });
+		</script>
+    </body>
+</html>

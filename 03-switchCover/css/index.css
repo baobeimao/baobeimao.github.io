@@ -1,0 +1,95 @@
+body{
+	margin: 0;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: none;
+	vertical-align: top;
+}
+input{
+	outline: none;
+	padding: 0;
+	border: none;
+}
+#box{
+	margin: 10px auto;
+	width: 289px;
+	height: 594px;
+	background: url(img/bg.jpg) no-repeat;
+	position: relative;
+}
+.list{
+	width: 237px;
+	height: 370px;
+	overflow: auto;
+	position: absolute;
+	left: 26px;
+	top: 87px;
+}
+.inputBox{
+	padding: 7px 3px;
+	width:228px;
+	height: 36px;
+	position: absolute;
+	left: 26px;
+	bottom: 87px;
+}
+#avatar{
+	float:left;
+	width: 30px;
+	height: 34px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 1px solid #ded6e7;
+}
+#mes{
+	float:left;
+	width: 130px;
+	height: 34px;
+	border: 1px solid #ded6e7;
+	border-radius: 4px;
+	margin-left: 5px;
+}
+#btn{
+	float:left;
+	width: 55px;
+	height: 36px;
+	font: 16px/36px "微软雅黑";
+	margin-left: 3px;
+	background:#fff;
+	border: 1px solid #ded6e7;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.list p.zhuai img{
+	float: left;
+}
+.list p.zhuai span{
+	float: left;
+	margin-left: 10px;
+	padding: 5px;
+	max-width: 156px;
+	color: black;
+	background: #bb5050;
+	word-break: break-all;
+	border-radius: 10px;
+}
+.list p.xiaohei img{
+	float: right;
+}
+.list p.xiaohei span{
+	float: right;
+	margin-right: 10px;
+	padding: 5px;
+	max-width: 156px;
+	color: #fff;
+	background: #69ac40;
+	word-break: break-all;
+	border-radius: 10px;
+}
+.list p {
+	overflow: hidden;
+}

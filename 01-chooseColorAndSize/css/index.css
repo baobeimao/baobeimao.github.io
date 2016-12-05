@@ -1,0 +1,163 @@
+/* 
+* @Author: weiting
+* @Date:   2016-12-03 15:11:08
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-12-03 21:21:33
+*/
+.hide{
+	display:none;
+}
+.red-click{
+	background: #ff0000; 
+}
+.yellow-click{
+	background: #ffff00;
+}
+.blue-click{
+	background: #5a94ef;
+}
+#wrap{
+	position: relative;
+	width:735px;
+	height: 400px;
+	overflow: hidden;
+	background:#efefef;
+	padding-top:20px;
+}
+.header .para, .header .click-set{
+	display:inline-block;
+}
+.header .para{
+	padding: 0 0 6px 25px;
+	height:34px;
+	font:  bold 24px/34px "微软雅黑";
+	color: #000;
+}
+.header .click-set{
+	width: 100px;
+	height: 40px;
+	background: #ff0000;
+	font: 12px/40px "宋体";
+	color: #fff;
+	text-align: center;
+	cursor:pointer;
+}
+.square{
+	padding: 20px 602px 232px 25px;
+	width: 108px;
+}
+.square div{
+	height: 100px;
+	border: 4px solid #000;
+}
+.mask{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 735px;
+	height: 420px;
+	background: #808080;
+	opacity: 0.5;
+}
+.dialog{
+	position: absolute;
+	right: 25px;
+	bottom: 32px;
+	padding: 8px 0px 19px 33px;
+	width: 267px;
+	border: 20px solid #9c949c;
+	background: #fff;
+	z-index: 9999;
+}
+.dialog-list li {
+	margin-top: 8px;
+	height: 32px;
+}
+.dialog-list li strong{
+	display: inline-block;
+	vertical-align: top;
+	height: 32px;
+	font: 18px/32px "微软雅黑";
+	color: #000;
+}
+.dialog-list li span{
+	display: inline-block;
+	vertical-align: top;
+	width: 34px;
+	height: 30px;
+	background: #efefef;
+	border: 1px solid #c0c0c0;
+	text-align: center;
+	font: 12px/30px "微软雅黑";
+	cursor: pointer;
+}
+.dialog-list li span.red{
+	background: #9cce00;
+	border: 1px solid #9cce00;
+	color: #fff;
+}
+.dialog-list li span.red:hover{
+	border: 1px solid #000;
+	background: #ff0000;
+}
+.dialog-list li span.yellow{
+	background: #efbd00;
+	border: 1px solid #efbd00;
+	color: #ffff00;
+}
+.dialog-list li span.yellow:hover{
+	border: 1px solid #000;
+	background: #ffff00;
+	color: #fff;
+}
+.dialog-list li span.blue{
+	background: #5a94ef;
+	border: 1px solid #5a94ef;
+	color: #fff;
+}
+.dialog-list li span.blue:hover{
+	border: 1px solid #000;
+	
+}
+.width span:hover,.height span:hover{
+	border: 1px solid #000;
+	background: #ef9400;
+	color: #000;
+}
+
+
+.btn-box{
+	padding: 21px 0px 0px 54px;
+	width: 213px;
+	height: 32px;
+}
+.btn-box .recover-border{
+	float:left;
+	width: 60px;
+	height: 30px;
+	border: 1px solid #efbd6b;
+	border-radius: 2px;
+	background: #002952;
+}
+.btn-box .recover-border a.recover{
+	display: block;
+	width: 58px;
+	height: 28px;
+	border：1px solid #635229;
+	text-align: center;
+	font: 14px/28px "微软雅黑";
+	color: #fff;
+	margin-right: 2px;
+}
+.btn-box .sure{
+	float:left;
+	width: 60px;
+	height: 30px;
+	border: 1px solid #fff;
+	text-align: center;
+	font: 14px/30px "微软雅黑";
+	color: #fff;
+	background: #002952;
+}
+
+

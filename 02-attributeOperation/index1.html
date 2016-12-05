@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css" />
+        <script type="text/javascript" src="./js/jquery-2.2.4.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <style type="text/css">
+        	ul{
+        		padding: 0;
+        		margin: 0;
+        	}
+        	li{
+        		list-style: none;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="input-group input-group-sm">
+    		<input type="text" id="mes" class="form-control" />
+    	</div>
+    	<input type="button" id="send" value="发表留言" class="btn btn-default" />
+    	<ul id="list">
+    		<li>您好！</li>
+    	</ul>
+
+    	<script type="text/javascript">
+    	    $("#send").click(function(){
+    	    	var mes = $("#mes").val();
+    	    	$("#list").html( $("#list").html()+ "<li>"+mes+"</li>" );
+    	    	$("#mes").val("");
+    	    });
+
+    	</script>
+    </body>
+</html>
