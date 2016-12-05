@@ -1,0 +1,45 @@
+{\rtf1}
+body{
+	margin: 0;
+	font: 12px "宋体";
+}
+img{
+	border: none;
+	vertical-align: top;
+}
+
+.wrap{
+	width: 520px;
+	margin: 30px auto;
+	position: relative;
+}
+.box{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#previous{
+	position: absolute;
+	left: 10px;
+	top: 150px;
+	width: 60px;
+	height:30px;
+	background: rgba(228,148,148);
+	z-index: 2;
+}
+#previous:hover{
+	background:yellow;
+}
+#next{
+	position: absolute;
+	right: 10px;
+	top: 150px;
+	width: 60px;
+	height:30px;
+	background: rgba(228,148,148);
+	z-index: 2;
+
+}
+#next:hover{
+	background:yellow;
+}
