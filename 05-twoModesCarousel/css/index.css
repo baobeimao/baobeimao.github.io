@@ -1,0 +1,107 @@
+{\rtf1}
+body{
+	margin: 0;
+	font: 14px "宋体";
+}
+p{
+	margin: 0;
+}
+img{
+	border: none;
+	vertical-align: top;
+}
+#wrap{
+	position: relative;
+	margin: 120px auto;
+	width:520px;
+	height:280px;
+	background: #8ce6d2;
+	border: 5px solid #000;
+}
+.previous{
+	position: absolute;
+	left: 10px;
+	top: 77px;
+	width: 45px;
+	height: 100px;
+	background: url(img/btn.png) no-repeat  0 0;
+	z-index: 100;
+	opacity: 0.5;
+	cursor: pointer;
+}
+.next{
+	position: absolute;
+	right: 10px;
+	top: 77px;
+	width: 45px;
+	height: 100px;
+	background: url(img/btn.png) no-repeat  -55px 0;
+	z-index: 100;
+	opacity: 0.5;
+	cursor: pointer;
+}
+.previous:hover{
+	opacity: 0.8;
+}
+.next:hover{
+	opacity: 0.8;
+}
+.para1{
+	position: absolute;
+	bottom: -45px;
+	left: 95px;
+	height: 30px;
+	font: bold 14px/30px "微软雅黑";
+}
+.cycle{
+	position: absolute;
+	bottom: -45px;
+	left: 8px;
+	height: 30px;
+	border-radius: 10px;
+	outline: none;
+}
+.para2{
+	position: absolute;
+	bottom: -85px;
+	left: 95px;
+	height: 30px;
+	font: bold 14px/30px "微软雅黑";
+}
+.order{
+	position: absolute;
+	bottom: -85px;
+	left: 8px;
+	height: 30px;
+	border-radius: 10px;
+	outline: none;
+}
+.title1{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	text-align: center;
+	background:#000;
+	opacity: 0.5;
+	z-index: 10;
+	width: 520px;
+	height: 30px;
+	font: 14px/30px "微软雅黑";
+	color:#fff;
+}
+.title2{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	background:#000;
+	opacity: 0.5;
+	z-index: 10;
+	width: 520px;
+	height: 30px;
+	font: 14px/30px "微软雅黑";
+	color:#fff;
+}
+.yellow{
+	background: yellow;
+}
