@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2016-11-7-复习-用面向对象重写一遍选项卡</title>
+    <link rel="stylesheet" href="">
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .box1 div,.box2 div {
+            width:100px;
+            height:100px;
+            background:yellow;
+            display:none;
+        }
+        .box1 div.show,  .box2 div.show{
+            display:block;
+        }
+        .box2{
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box1" >
+        <input type="button" value = "按钮一" style = "background:red;" />
+        <input type="button" value = "按钮二" />
+        <input type="button" value = "按钮三" />
+        <div class="div1 show">1-1</div>
+        <div class="div2">1-2</div>
+        <div class="div3">1-3</div>
+    </div>
+    <div class = "box2" >
+        <input type="button" value = "按钮一" style = "background:red; "/>
+        <input type="button" value = "按钮二" />
+        <input type="button" value = "按钮三" />
+        <div class="div1 show">2-1</div>
+        <div class="div2">2-2</div>
+        <div class="div3">2-3</div>
+    </div>
+    <input type="button" value = "第一个自动播放" id = "btn1"/>
+    <input type="button" value = "第一个停止播放" id = "btn2"/>
+    <input type="button" value = "第二个自动播放" id = "btn3"/>
+    <input type="button" value = "第二个停止播放" id = "btn4"/>
+    <input type="button" value = "两个播放反转" id = "btn5"/>
+
+
+    <script type="text/javascript">
+        //创建构造函数，并把属性挂载到实例上
+        function Tab(parent){
+            this.allInputs = parent.getElementsByTagName("input");
+
+            this.allDivs = parent.getElementsByTagName("div");
+            this.len = this.allInputs.length;
+            this.timer = null;
+            this.n = 0;
+            this.init();
+        }
+
+        Tab.prototype.init = function(){
+            var _this = this;
+
+            for (var i = 0; i < this.len; i++){
+                this.allInputs[i].index = i;
+                this.allInputs[i].onclick = function(){
+                    _this.play(this.index);
+                    console.log(this.index)
+                }
+
+            }
+        }
+
+        Tab.prototype.play = function(index){
+            for(var i = 0; i < this.len; i++){
+                this.allInputs[i].style.background = "";
+                this.allDivs[i].className = "";
+            }
+
+            this.allInputs[index].style.background = "red";
+            this.allDivs[index].className = "show";
+
+            this.n = index;
+        }
+
+        Tab.prototype.autoPlay = function(){
+            var _this = this;
+            if(this.timer){
+                return;
+            }
+            this.timer = setInterval(function(){
+                //这里的this指向window
+                _this.n++;
+                if(_this.n > _this.len - 1){
+                    _this.n = 0;
+                }
+
+                _this.play(_this.n);
+
+            },500)
+        }
+
+        Tab.prototype.stopPlay = function(){
+            clearInterval(this.timer);
+            this.timer = null;
+        }
+
+        Tab.prototype.judgeStatus = function(){
+            return !!this.timer;
+        }
+
+
+        var box1 = document.getElementsByClassName("box1")[0];
+        var box2 = document.getElementsByClassName("box2")[0];
+
+
+        var tab1 = new Tab(box1);
+        var tab2 = new Tab(box2);
+        tab2.autoPlay();
+
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        var btn4 = document.getElementById("btn4");
+        var btn5 = document.getElementById("btn5");
+
+        btn1.onclick = function(){
+            tab1.autoPlay();
+        }
+
+        btn2.onclick = function(){
+            tab1.stopPlay();
+        }
+
+        btn3.onclick = function(){
+            tab2.autoPlay();
+        }
+
+        btn4.onclick = function(){
+            tab2.stopPlay();
+        }
+
+        btn5.onclick = function(){
+            //点击btn5的时候，两个状态反转，反转之前先判断状态
+            if(tab1.judgeStatus()){
+                tab1.stopPlay();
+            }else{
+                tab1.autoPlay();
+            }
+
+            if(tab2.judgeStatus()){
+                tab2.stopPlay();
+            }else{
+                tab2.autoPlay();
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+
